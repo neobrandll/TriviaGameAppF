@@ -1,0 +1,153 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\049b188b3f1c2ca0b164b531650eac32\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\5879c03482cee10945aa55b9f514e2f9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\754988abbd5a53b81a55d7071dd6b40a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\af77cf9b7ad949d96995ac25b18ac351\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0432a7efaab4e1fa72a37663421e76cf\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3cc0c28bcc146883b867bfe1dfabd90a\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6f19c43f27580923df6faa31e8d4e678\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\958844804b96f87ab45751d8a42c4704\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\7e475c71e7d0e23fd83138e6428b357a\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\ce7e8eca715b83bb021bd0460fc93e55\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\11aa9c36261bca9ae39b61bd9c60cafe\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\f0e2eb1896bee519d0d8463d35dac136\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\a477657ae1f57c4cb3663434cee8a148\AndroidManifest.xml:2:1-13:12
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6d8a560d9b815f30c5bda39ab6630b64\AndroidManifest.xml:1:1-3:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\f147094a514a83671366f77d2b823c96\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c85462a47751618bbec5938a96d9e9d6\AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\1eb898d54daa586eab9f357ca2fd0ce1\AndroidManifest.xml:2:1-9:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c48fda003dfb936e697afd2b48fa9fb3\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fe977779f3fbc3192647754443b3e9c1\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+	package
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:2:5-33
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:11-69
+uses-permission#android.permission.INTERNET
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:4:5-67
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:4:22-64
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:5:5-77
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:11:5-78
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:11:5-78
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:5:22-75
+application
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:7:5-24:19
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:13:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\a477657ae1f57c4cb3663434cee8a148\AndroidManifest.xml:11:5-20
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\a477657ae1f57c4cb3663434cee8a148\AndroidManifest.xml:11:5-20
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6d8a560d9b815f30c5bda39ab6630b64\AndroidManifest.xml:2:3-17
+MERGED from [org.webkit:android-jsc:r174650] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\android-jsc-r174650.aar\6d8a560d9b815f30c5bda39ab6630b64\AndroidManifest.xml:2:3-17
+	android:label
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:9:7-39
+	android:icon
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:10:7-41
+	android:allowBackup
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:11:7-34
+	android:theme
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:12:7-38
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:8:7-38
+activity#com.triviagameappf.MainActivity
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:13:7-22:18
+	android:label
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:15:9-41
+	android:windowSoftInputMode
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:17:9-51
+	android:configChanges
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:16:9-79
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:14:9-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:18:9-21:25
+action#android.intent.action.MAIN
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:19:13-65
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:19:21-62
+category#android.intent.category.LAUNCHER
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:20:13-73
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:20:23-70
+activity#com.facebook.react.devsupport.DevSettingsActivity
+ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:23:7-84
+	android:name
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:23:17-81
+uses-sdk
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\9d914a1b771576e1c1720d7bae8a9572\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\049b188b3f1c2ca0b164b531650eac32\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\049b188b3f1c2ca0b164b531650eac32\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\5879c03482cee10945aa55b9f514e2f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\5879c03482cee10945aa55b9f514e2f9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\754988abbd5a53b81a55d7071dd6b40a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\754988abbd5a53b81a55d7071dd6b40a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\af77cf9b7ad949d96995ac25b18ac351\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\af77cf9b7ad949d96995ac25b18ac351\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0432a7efaab4e1fa72a37663421e76cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\0432a7efaab4e1fa72a37663421e76cf\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3cc0c28bcc146883b867bfe1dfabd90a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\3cc0c28bcc146883b867bfe1dfabd90a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6f19c43f27580923df6faa31e8d4e678\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\6f19c43f27580923df6faa31e8d4e678\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\958844804b96f87ab45751d8a42c4704\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fresco-1.10.0.aar\958844804b96f87ab45751d8a42c4704\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\7e475c71e7d0e23fd83138e6428b357a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-okhttp3-1.10.0.aar\7e475c71e7d0e23fd83138e6428b357a\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\ce7e8eca715b83bb021bd0460fc93e55\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\drawee-1.10.0.aar\ce7e8eca715b83bb021bd0460fc93e55\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\11aa9c36261bca9ae39b61bd9c60cafe\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.10.0.aar\11aa9c36261bca9ae39b61bd9c60cafe\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\f0e2eb1896bee519d0d8463d35dac136\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.10.0.aar\f0e2eb1896bee519d0d8463d35dac136\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\a477657ae1f57c4cb3663434cee8a148\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.soloader:soloader:0.5.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\soloader-0.5.1.aar\a477657ae1f57c4cb3663434cee8a148\AndroidManifest.xml:7:5-9:41
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\f147094a514a83671366f77d2b823c96\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\f147094a514a83671366f77d2b823c96\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c85462a47751618bbec5938a96d9e9d6\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\c85462a47751618bbec5938a96d9e9d6\AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\1eb898d54daa586eab9f357ca2fd0ce1\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.10.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\fbcore-1.10.0.aar\1eb898d54daa586eab9f357ca2fd0ce1\AndroidManifest.xml:5:5-7:41
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c48fda003dfb936e697afd2b48fa9fb3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\c48fda003dfb936e697afd2b48fa9fb3\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fe977779f3fbc3192647754443b3e9c1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\fe977779f3fbc3192647754443b3e9c1\AndroidManifest.xml:20:5-44
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		ADDED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+		INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+IMPLIED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_PHONE_STATE
+IMPLIED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+IMPLIED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
