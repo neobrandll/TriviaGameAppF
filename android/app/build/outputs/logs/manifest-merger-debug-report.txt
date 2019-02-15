@@ -5,6 +5,7 @@ INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAp
 INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
 INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml:1:1-26:12
 MERGED from [:react-native-navigation] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-navigation\lib\android\app\build\intermediates\manifests\full\reactNative57\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:react-native-vector-icons] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:2:1-11:12
 MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\38bdfdfb461c6f0980de00a3f824e308\AndroidManifest.xml:2:1-15:12
 MERGED from [com.github.wix-playground:ahbottomnavigation:2.4.8] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\ahbottomnavigation-2.4.8.aar\c07011f99e01e733ec0e5d0a4206c460\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:design:27.1.1] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\e5ba79ce4ee643c12d2c1c470cb71ac0\AndroidManifest.xml:17:1-22:12
@@ -118,6 +119,8 @@ INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAp
 INJECTED from D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\android\app\src\main\AndroidManifest.xml
 MERGED from [:react-native-navigation] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-navigation\lib\android\app\build\intermediates\manifests\full\reactNative57\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [:react-native-navigation] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-navigation\lib\android\app\build\intermediates\manifests\full\reactNative57\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:react-native-vector-icons] D:\Users\Brandon\Documentos\URU\MOVILES\TriviaGameApp\TriviaGameAppF\node_modules\react-native-vector-icons\android\build\intermediates\manifests\full\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\38bdfdfb461c6f0980de00a3f824e308\AndroidManifest.xml:7:5-9:41
 MERGED from [com.facebook.react:react-native:0.57.7] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\react-native-0.57.7.aar\38bdfdfb461c6f0980de00a3f824e308\AndroidManifest.xml:7:5-9:41
 MERGED from [com.github.wix-playground:ahbottomnavigation:2.4.8] C:\Users\Brandon\.gradle\caches\transforms-1\files-1.1\ahbottomnavigation-2.4.8.aar\c07011f99e01e733ec0e5d0a4206c460\AndroidManifest.xml:7:5-9:41
