@@ -4,7 +4,26 @@
             "outputFile": "D:\\Users\\Brandon\\Documentos\\URU\\MOVILES\\TriviaGameApp\\TriviaGameAppF\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Brandon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\049b188b3f1c2ca0b164b531650eac32\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\Brandon\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\e5ba79ce4ee643c12d2c1c470cb71ac0\\res\\values-land\\values-land.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "232"
+                    },
+                    "to": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "328",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "505"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Brandon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\68b537375344bab95d73a0d66bcabac5\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

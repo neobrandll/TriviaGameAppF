@@ -1,0 +1,4 @@
+#Thu Feb 14 19:26:47 VET 2019
+base.0=D\:\\Users\\Brandon\\Documentos\\URU\\MOVILES\\TriviaGameApp\\TriviaGameAppF\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex
