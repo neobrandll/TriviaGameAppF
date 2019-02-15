@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Thu Feb 14 21:24:07 VET 2019
+#Thu Feb 14 21:46:49 VET 2019
 5.base=D\:\\Users\\Brandon\\Documentos\\URU\\MOVILES\\TriviaGameApp\\TriviaGameAppF\\android\\app\\build\\intermediates\\assets\\debug
 22.path=lib/x86/libimagepipeline.so
 32.set=ASSET

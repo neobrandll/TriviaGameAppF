@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { connect } from "react-redux";
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "../../../node_modules/react-native-vector-icons/Ionicons";
 
-const myIcon = <Icon name="rocket" size={30} color="#900" />;
+const myIcon = <Icon name="md-log-out" size={30} color="#900" />;
 
 
  class Auth extends React.Component {
