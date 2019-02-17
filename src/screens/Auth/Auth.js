@@ -19,16 +19,18 @@ import CustomBtn from "../../components/UI/CustomBtn/CustomBtn";
 import backimg from "../../assets/bg.jpg";
 import validate from "../../utility/validation";
 import { tryAuth } from "../../store/actions/index";
+import {Navigation} from "react-native-navigation";
+import Icon from "../../../node_modules/react-native-vector-icons/Ionicons"
 
 
-class AuthScreen extends Component {
+class Auth extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape",
     authMode: "login",
     controls: {
       email: {
         value: "",
-        valid: false,
+        valid: true,
         validationRules: {
           isEmail: true
         },
@@ -36,7 +38,7 @@ class AuthScreen extends Component {
       },
       password: {
         value: "",
-        valid: false,
+        valid: true,
         validationRules: {
           minLength: 6
         },
@@ -81,8 +83,10 @@ class AuthScreen extends Component {
       email: this.state.controls.email.value,
       password: this.state.controls.password.value
     };
-    this.props.onLogin(authData);
-    //startMainTabs();
+    //this.props.onLogin(authData);
+    
+    this.susLog();
+
   };
 
   updateInputState = (key, value) => {
@@ -130,6 +134,45 @@ class AuthScreen extends Component {
       };
     });
   };
+
+
+  susLog = ()=> {
+    Promise.all([
+      Icon.getImageSource("md-menu", 30),
+  ]).then(sources =>{
+    Navigation.setRoot({
+      root: {
+        stack: {
+          children: [{
+            component: {
+              name: "trivia-game.GameInitScreen",
+            }
+          }],
+          options: {
+            topBar: {
+              title: {
+                alignment: "center",
+                text: 'Game init!'
+              },
+                leftButtons: [
+                    { 
+                        icon: sources[0],
+                        id: "sideDrawerToggle"
+                    }
+                   
+
+                ]
+            }
+          }
+        }
+      }
+    });
+
+  })
+
+    
+   
+  }
 
   render() {
     let headingText = null;
@@ -288,4 +331,6 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(AuthScreen);
+
+
+export default connect(null, mapDispatchToProps)(Auth);
