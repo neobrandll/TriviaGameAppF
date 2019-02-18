@@ -1,2 +1,2 @@
 export { tryAuth } from './auth';
-export {setCategory, setDifficulty} from "./config"
+export {setCategory, setDifficulty, setJson} from "./config"

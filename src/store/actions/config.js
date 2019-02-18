@@ -1,4 +1,4 @@
-import {SET_DIFFICULTY, SET_CATEGORY} from "./actionTypes";
+import {SET_DIFFICULTY, SET_CATEGORY, SET_JSON} from "./actionTypes";
 
 
 export const setCategory = (category) => {
@@ -14,4 +14,11 @@ export const setDifficulty = (difficulty) => {
         difficulty: difficulty
     };
 };
+
+export const setJson = (json) =>{
+    return {
+        type: SET_JSON,
+        json: json
+    }
+}
 

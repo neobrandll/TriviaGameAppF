@@ -17,7 +17,7 @@ const customBtn = props => {
         props.disabled ? styles.disabled : null
       ]}
     >
-      <Text style={props.disabled ? styles.disabledText : null}>
+      <Text style={props.disabled ? styles.disabledText : {color:"#fff"}}>
         {props.children}
       </Text>
     </View>

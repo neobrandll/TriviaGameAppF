@@ -85,7 +85,7 @@ class Auth extends Component {
     };
     //this.props.onLogin(authData);
     
-    this.susLog();
+    Auth.susLog();
 
   };
 
@@ -136,7 +136,7 @@ class Auth extends Component {
   };
 
 
-  susLog = ()=> {
+  static susLog = ()=> {
     Promise.all([
       Icon.getImageSource("md-menu", 30),
   ]).then(sources =>{
@@ -152,7 +152,7 @@ class Auth extends Component {
             topBar: {
               title: {
                 alignment: "center",
-                text: 'Game init!'
+                text: 'Trivia Game'
               },
                 leftButtons: [
                     { 

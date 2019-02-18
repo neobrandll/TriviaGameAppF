@@ -4,6 +4,7 @@ import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import MainText from "../../components/UI/MainText/MainText";
 import backimg from "../../assets/bg.jpg";
 import ConfigGame from "../../components/ConfigGame/ConfigGame"
+import AnimatedBtn from "../../components/AnimatedBtn/AnimatedBtn"
 import { Provider } from "react-redux";
 import configureStore from "../../store/configureStore"
 const store = configureStore();
@@ -13,6 +14,8 @@ class Gameinit extends Component{
     state={
         
     }
+
+   
 
     render(){
         return(
@@ -29,6 +32,7 @@ class Gameinit extends Component{
                     </View>
                     
                     <ConfigGame/>
+                    <AnimatedBtn/>
                     
                 
                             

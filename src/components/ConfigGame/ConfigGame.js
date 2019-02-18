@@ -1,12 +1,14 @@
 import React , {Component} from "react";
-import {StyleSheet, View, Picker, Text} from "react-native"
+import { View, Picker, Text} from "react-native"
 import MainText from "../../components/UI/MainText/MainText";
 import { connect } from "react-redux";
+import styles from "./ConfigGameStyles"
 
 import { setCategory, setDifficulty } from "../../store/actions/index";
 
 
 class configGame extends Component{
+    
     render(){
 
         return(
@@ -25,12 +27,12 @@ class configGame extends Component{
                                         this.props.onCatChange(itemValue)
                                     }>
                                     <Picker.Item label="Any Category" value="any" />
-                                    <Picker.Item label="General Knowledge" value="loco" />
-                                    <Picker.Item label="Sports" value="java" />
-                                    <Picker.Item label="Animals" value="java" />
-                                    <Picker.Item label="Films" value="java" />
-                                    <Picker.Item label="Music" value="mario" />
-                                    <Picker.Item label="Geography " value="carla" />
+                                    <Picker.Item label="General Knowledge" value="9" />
+                                    <Picker.Item label="Sports" value="21" />
+                                    <Picker.Item label="Animals" value="27" />
+                                    <Picker.Item label="Films" value="11" />
+                                    <Picker.Item label="Music" value="12" />
+                                    <Picker.Item label="Geography " value="22" />
                             </Picker>
                     
                     
@@ -43,8 +45,8 @@ class configGame extends Component{
                                             onValueChange={(itemValue) =>
                                                 this.props.onDifChange(itemValue)
                                             }>
-                                            <Picker.Item label="Medium" value="medium" />
                                             <Picker.Item label="Easy" value="easy" />
+                                            <Picker.Item label="Medium" value="medium" />
                                             <Picker.Item label="Hard" value="hard" />
                                     </Picker>
                     
@@ -56,27 +58,7 @@ class configGame extends Component{
 
                             
 
-const styles = StyleSheet.create({
-   
-        pickerStyle:{height: 50, width: "40%", backgroundColor:"white"},
-        drawerItem: {
-            flexDirection: "row",
-        width:"100%",
-        justifyContent: "center",
-        
-        },
-        pickertext:{
-            paddingTop:20,
-            flexDirection: "row",
-            width:"100%",
-        },
-        categoryText:{
-            paddingLeft:28,
-            marginRight:100
 
-        }
-  
-})
 
 const mapDispatchToProps = dispatch => {
     return {
