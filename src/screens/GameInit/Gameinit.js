@@ -3,17 +3,21 @@ import {StyleSheet, View,ImageBackground, Picker, Text} from "react-native"
 import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import MainText from "../../components/UI/MainText/MainText";
 import backimg from "../../assets/bg.jpg";
+import ConfigGame from "../../components/ConfigGame/ConfigGame"
+import { Provider } from "react-redux";
+import configureStore from "../../store/configureStore"
+const store = configureStore();
 
 
 class Gameinit extends Component{
     state={
-        category: "any",
-        difficulty: "medium"
+        
     }
 
     render(){
         return(
             <ImageBackground source={backimg } style={styles.backimg}>
+            <Provider store={store}>
                 <View style={styles.container}>
                     <View style={styles.headerContainer}>
                         <MainText>
@@ -23,46 +27,10 @@ class Gameinit extends Component{
                             <HeadingText style={styles.header}>game!</HeadingText>
                         </MainText>
                     </View>
-                    <View style={styles.pickertext}>
-                        <Text style={[styles.categoryText, {color:"#fff"}]}>Category:</Text> 
-                        <MainText >Difficulty:</MainText> 
-                    </View>
                     
+                    <ConfigGame/>
                     
-                <View style={styles.drawerItem}>
-                    
-                            
-                            <Picker
-                                    selectedValue={this.state.category}
-                                    style={[styles.pickerStyle, {marginRight:20}]}
-                                    onValueChange={(itemValue) =>
-                                        this.setState({category: itemValue})
-                                    }>
-                                    <Picker.Item label="Any Category" value="any" />
-                                    <Picker.Item label="General Knowledge" value="loco" />
-                                    <Picker.Item label="Sports" value="java" />
-                                    <Picker.Item label="Animals" value="java" />
-                                    <Picker.Item label="Films" value="java" />
-                                    <Picker.Item label="Music" value="mario" />
-                                    <Picker.Item label="Geography " value="carla" />
-                            </Picker>
-                    
-                    
-                    
-                                    
-                                    
-                                    <Picker
-                                            selectedValue={this.state.difficulty}
-                                            style={styles.pickerStyle}
-                                            onValueChange={(itemValue) =>
-                                                this.setState({difficulty: itemValue})
-                                            }>
-                                            <Picker.Item label="Medium" value="medium" />
-                                            <Picker.Item label="Easy" value="easy" />
-                                            <Picker.Item label="Hard" value="hard" />
-                                    </Picker>
-                    
-                 </View>
+                
                             
     
                     
@@ -71,6 +39,7 @@ class Gameinit extends Component{
                   
 
                 </View>
+                </Provider>
             </ImageBackground>
 
         )

@@ -3,7 +3,7 @@ import { createStore, combineReducers, compose } from 'redux';
 import AppReducer from './reducers/appReducer';
 
 const rootReducer = combineReducers({
-    App: AppReducer
+    app: AppReducer
 });
 
 let composeEnhancers = compose;
