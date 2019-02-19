@@ -27,15 +27,24 @@ class Auth extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape",
     authMode: "login",
+
     controls: {
-      email: {
-        value: "",
+      name:{
+        value:"",
         valid: true,
-        validationRules: {
-          isEmail: true
+        validationRules:{
+          notEmpty: true
         },
         touched: false
       },
+      // email: {
+      //   value: "",
+      //   valid: true,
+      //   validationRules: {
+      //     isEmail: true
+      //   },
+      //   touched: false
+      // },
       password: {
         value: "",
         valid: true,
@@ -80,7 +89,7 @@ class Auth extends Component {
 
   loginHandler = () => {
     const authData = {
-      email: this.state.controls.email.value,
+      email: this.state.controls.name.value,
       password: this.state.controls.password.value
     };
     //this.props.onLogin(authData);
@@ -134,6 +143,8 @@ class Auth extends Component {
       };
     });
   };
+
+  
 
 
   static susLog = ()=> {
@@ -225,15 +236,15 @@ class Auth extends Component {
           
             <View style={styles.inputContainer}>
               <CustomInput
-                placeholder="Your Email Address"
+                placeholder="Username"
                 style={styles.input}
-                value={this.state.controls.email.value}
-                onChangeText={val => this.updateInputState("email", val)}
-                valid={this.state.controls.email.valid}
-                touched={this.state.controls.email.touched}
+                value={this.state.controls.name.value}
+                onChangeText={val => this.updateInputState("name", val)}
+                valid={this.state.controls.name.valid}
+                touched={this.state.controls.name.touched}
                 autoCapitalize="none"
                 autoCorrect={false}
-                keyboardType="email-address"
+                
               />
               <View
                 style={
@@ -270,7 +281,7 @@ class Auth extends Component {
             onPress={this.loginHandler}
             disabled={
               !this.state.controls.confirmPassword.valid && this.state.authMode === "signup" ||
-              !this.state.controls.email.valid ||
+              !this.state.controls.name.valid ||
               !this.state.controls.password.valid
             }
           >

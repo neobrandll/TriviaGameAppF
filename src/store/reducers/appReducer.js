@@ -1,13 +1,15 @@
 import {
   SET_CATEGORY,
-  SET_DIFFICULTY
+  SET_DIFFICULTY,
+  SET_ROUND
 
 } from "../actions/actionTypes";
 
 
 const initialState = {
     category: "any",
-    difficulty: "easy"
+    difficulty: "easy",
+    round:0
   }
 
 
@@ -23,6 +25,11 @@ const reducer = (state = initialState, action) => {
           return{
             ...state,
             difficulty: action.difficulty
+          }
+          case SET_ROUND:
+          return{
+            ...state,
+            round: action.round
           }
     default:
       return state;

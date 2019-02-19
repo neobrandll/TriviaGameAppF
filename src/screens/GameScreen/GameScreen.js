@@ -52,8 +52,8 @@ class GameScreen extends Component{
     render(){
     
         let questionArr = []
-        questionArr = questionArr.concat(this.props.questions.results[this.state.i].correct_answer,
-            this.props.questions.results[this.state.i].incorrect_answers)
+        questionArr = questionArr.concat(this.props.questions.results[this.props.round].correct_answer,
+            this.props.questions.results[this.props.round].incorrect_answers)
 
         questionArr = questionArr.sort()
 
@@ -63,10 +63,10 @@ class GameScreen extends Component{
                 <View style={styles.container}>
                 
                         <View style={styles.textContainer}>
-                            <Text style={styles.textStyles}> {this.replaceSpecial(this.props.questions.results[this.state.i].question)}</Text>
+                            <Text style={styles.textStyles}> {this.replaceSpecial(this.props.questions.results[this.props.round].question)}</Text>
                         </View>
                          
-                         <QuestionList  questionInfo={this.props.questions.results[this.state.i]} array={questionArr}></QuestionList>
+                         <QuestionList  questionInfo={this.props.questions.results[this.props.round]} array={questionArr}></QuestionList>
                     
             
                 </View>
@@ -78,9 +78,12 @@ class GameScreen extends Component{
 const mapStateToProps = state=> {
     return{
         difficulty: state.app.difficulty,
-        questions: state.questions.questionsJson
+        questions: state.questions.questionsJson,
+        round: state.app.round
     }
 }
+
+
 
 const styles = StyleSheet.create({
     backimg: {

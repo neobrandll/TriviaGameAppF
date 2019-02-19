@@ -1,26 +1,56 @@
-import React from "react";
+import React, {Component} from "react";
 import {
   TouchableOpacity,
   TouchableNativeFeedback,
   Text,
   View,
   StyleSheet,
+  Alert
   
 } from "react-native";
 import QuestionBtn from "../QuestionBtn/QuestionBtn"
+import {connect} from "react-redux"
+import {setRound} from "../../store/actions/index"
 
 
 
+class questionList extends Component{
+    constructor(props){
+        super(props)
+    }
+
+    correctAnswerHandler = ()=>{
+        Alert.alert("correct", "la acertaste",
+                        [{text: 'OK', onPress: () => {this.props.nextRound(this.props.round+1)} }],
+                        {onDismiss: ()=>{this.props.nextRound(this.props.round+1)} })
+    }
     
+    incorrectAnswerHandler = ()=>{
+        Alert.alert("incorrect", "la pelaste",
+                        [{text: 'OK', onPress: () => {this.props.nextRound(this.props.round+1)} }],
+                        {onDismiss: ()=>{this.props.nextRound(this.props.round+1)} })
+        
+    }
 
-const QuestionList = (props)=>{
-    let content;
-    if(props.array.length>2){
-        let originalArr = props.array
+    render(){
+
+        let content;
+    let info = this.props.questionInfo;
+    if(this.props.array.length>2){
+        let originalArr = this.props.array
         let arr1 = originalArr.splice(0,(originalArr.length/2));
         let arr2 = originalArr.splice(0,originalArr.length);
-        const firstView = arr1.map(question =>  <QuestionBtn key={question} color={"#ea4152"}> {question} </QuestionBtn>);
-        const secondView = arr2.map(question =>  <QuestionBtn key={question} color={"#ea4152"}> {question} </QuestionBtn>);
+        const firstView = arr1.map(question =>  {
+            return (<QuestionBtn 
+            onPress={question === info.correct_answer ? this.correctAnswerHandler : this.incorrectAnswerHandler} 
+            key={question} 
+            color={"#ea4152"}> {question} </QuestionBtn>)}
+            );
+        const secondView = arr2.map(question =>  { 
+            return (<QuestionBtn 
+            onPress={question === info.correct_answer ? this.correctAnswerHandler : this.incorrectAnswerHandler}
+             key={question} color={"#ea4152"}> {question} </QuestionBtn>)}
+             );
             
         content = (
             <View style={{width:"100%"}}>
@@ -36,21 +66,28 @@ const QuestionList = (props)=>{
         )
     }
     else{
-        const uniqueView = props.array.map(question =>  <QuestionBtn key={question} color={"#ea4152"}> {question} </QuestionBtn>);
+        const uniqueView = this.props.array.map(question =>  {
+            return(<QuestionBtn
+                onPress={question === info.correct_answer ? this.correctAnswerHandler : this.incorrectAnswerHandler}
+                 key={question} 
+                 color={"#ea4152"}> {question} </QuestionBtn>)}
+        );
         content = (
             <View style={styles.container}>
                 {uniqueView}
             </View>
         )
     }
-
-    
-    return (
-        <View style={styles.container}>
-            {content}
-        </View>
-    )
+        return (
+            <View style={styles.container}>
+                {content}
+            </View>
+        )
+    }
 }
+    
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -68,4 +105,17 @@ const styles = StyleSheet.create({
     }
         })
 
-    export default QuestionList;
+
+        const mapDispatchToProps = dispatch =>{
+            return {
+                nextRound: round => dispatch(setRound(round))
+              };
+        }
+
+        const mapStateToProps = state=> {
+            return{
+                round: state.app.round
+            }
+        }
+
+    export default connect(mapStateToProps, mapDispatchToProps)(questionList)
