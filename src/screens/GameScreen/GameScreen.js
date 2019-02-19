@@ -7,6 +7,8 @@ import {} from "../../store/actions/index"
 import Gameinit from "../GameInit/Gameinit"
 import backimg from "../../assets/bg.jpg";
 
+import QuestionList from "../../components/QuestionList/QuestionList"
+
 class GameScreen extends Component{
     state={
         i:0
@@ -38,14 +40,33 @@ class GameScreen extends Component{
         });
       }
 
-//
+      replaceSpecial = (string)=>{
+        let text = string
+        text = text.replace(/&quot;/g, '"');
+        text = text.replace(/&#039;/g, "'");
+        text = text.replace(/&rsquo;/g, "'");
+        return text
+       }
+
+
     render(){
+    
+        let questionArr = []
+        questionArr = questionArr.concat(this.props.questions.results[this.state.i].correct_answer,
+            this.props.questions.results[this.state.i].incorrect_answers)
+
+        questionArr = questionArr.sort()
+
+
         return(
             <ImageBackground source={backimg} style={styles.backimg}>
                 <View style={styles.container}>
                 
-
-                         <Text style={{color:"white"}}> {this.props.questions.results[this.state.i].question}</Text>
+                        <View style={styles.textContainer}>
+                            <Text style={styles.textStyles}> {this.replaceSpecial(this.props.questions.results[this.state.i].question)}</Text>
+                        </View>
+                         
+                         <QuestionList  questionInfo={this.props.questions.results[this.state.i]} array={questionArr}></QuestionList>
                     
             
                 </View>
@@ -68,9 +89,23 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center"
   },
+  textStyles:{
+      padding:20,
+      fontSize:25,
+    fontWeight:"bold",
+    color:"white"
+  },
+  textContainer:{
+      marginTop: 50,
+      width:"90%",
+      justifyContent:"center",
+      alignItems:"center",
+      backgroundColor:"rgba(92, 185, 230, 0.95)",
+      borderRadius: 5
+  }
 })
 
 export default connect(mapStateToProps,null)(GameScreen)
