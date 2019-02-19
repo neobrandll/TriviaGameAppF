@@ -1,8 +1,10 @@
 import React , {Component} from "react";
-import { View,  Text, TouchableOpacity, StyleSheet, Animated, Alert} from "react-native"
+import { View,  Text, TouchableOpacity, StyleSheet, Animated, Alert, Button} from "react-native"
 import {connect} from "react-redux"
 import { setJson } from "../../store/actions/index";
 import Auth from "../../screens/Auth/Auth"
+import Icon from "../../../node_modules/react-native-vector-icons/Ionicons"
+import {Navigation} from "react-native-navigation"
 
 
 class AnimatedBtn extends Component{
@@ -10,36 +12,91 @@ class AnimatedBtn extends Component{
         removeAnim: new Animated.Value(1)
     }
     startHandler = ()=>{
+        Promise.all([this.initializeGame(this.props.category,this.props.difficulty )])
+        .then(()=>{
+                this.goLoginScreen();
+        })
         Animated.timing(this.state.removeAnim, {
             toValue: 0,
             duration:700,
             useNativeDriver:true
-        }).start(()=>{
-            this.initializeGame(this.props.category,this.props.difficulty )}
-            );
+        }).start()
+            
+
     }
 
-    initializeGame = (category, difficulty)=>{
-        let catURL = (category ==="any") ? "" :  `&category=${category}`
+   goLoginScreen = ()=> {
+        Promise.all([
+          Icon.getImageSource("md-menu", 30),
+      ]).then(sources =>{
+        Navigation.setRoot({
+          root: {
+            sideMenu:{
+                id: "sideMenu",
+            left: {
+              component: {
+                id: "Drawer",
+                name: "trivia-game.SideMenu"
+              }
+            },
+            center: {
+            stack: {
+              children: [{
+                component: {
+                  name: "trivia-game.GameScreen",
+                }
+              }],
+              options: {
+                topBar: {
+                  title: {
+                    alignment: "center",
+                    text: 'Trivia Game'
+                  },
+                    leftButtons: [
+                        { 
+                            icon: sources[0],
+                            id: "sideDrawerToggle"
+                        }
+                    ]
+                }
+              }
+            }//stack
+            }//center
+            }//sideMenu
+          }//root
+        });
+      })
+      }
+
+    initializeGame = (category, difficulty)=>
+    {
+        return new Promise((resolve, reject)=>
+        {
+            let catURL = (category ==="any") ? "" :  `&category=${category}`
         let url = `https://opentdb.com/api.php?amount=10${catURL}&difficulty=${difficulty}`
-        console.log(url)
+
         fetch(url)
             .then((response) => response.json())
             .then((responseJson) => {
                 let questionsJson = responseJson;
                 this.props.SetQuestionsJson(questionsJson)
                 if(questionsJson.response_code !== 0){
-                    Alert.alert("Error", "No existen las preguntas suficientes para la configuracion dada",
+                    Alert.alert("Error", "There are not enough questions for that configuration",
                     [{text: 'OK', onPress: () => {Auth.susLog()} }],
-                    {onDismiss: ()=>{Auth.susLog();}
-                })
-                    
+                    {onDismiss: ()=>{Auth.susLog();} })
+                reject();
+                }
+                else{
+                    resolve(); 
                 }
              })
              .catch((e)=>{
-                 Alert.alert("Error", "Ha ocurrido un error", [{text: 'OK', onPress: () => {Auth.susLog()} }],
+                 Alert.alert("Error", "An error has ocurred", [{text: 'OK', onPress: () => {Auth.susLog()} }],
                     {onDismiss: ()=>{Auth.susLog();}})
-                console.log(e)})
+                    reject();
+            })
+        })
+        
           
     }
 
@@ -102,7 +159,7 @@ const styles = StyleSheet.create({
 
   const mapDispatchToProps = dispatch =>{
       return{
-          SetQuestionsJson: json => dispatch(setJson(json))
+          SetQuestionsJson: QuestionsJson => dispatch(setJson(QuestionsJson))
       }
   }
 

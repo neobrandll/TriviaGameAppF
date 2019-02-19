@@ -1,9 +1,12 @@
 import { createStore, combineReducers, compose } from 'redux';
 
 import AppReducer from './reducers/appReducer';
+import Jreducer from "./reducers/questionsReducer"
 
 const rootReducer = combineReducers({
-    app: AppReducer
+    app: AppReducer,
+    questions: Jreducer
+
 });
 
 let composeEnhancers = compose;

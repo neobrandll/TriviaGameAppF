@@ -1,14 +1,13 @@
 import {
   SET_CATEGORY,
-  SET_DIFFICULTY,
-  SET_JSON
+  SET_DIFFICULTY
+
 } from "../actions/actionTypes";
 
 
 const initialState = {
     category: "any",
-    difficulty: "easy",
-    json:{}
+    difficulty: "easy"
   }
 
 
@@ -25,11 +24,6 @@ const reducer = (state = initialState, action) => {
             ...state,
             difficulty: action.difficulty
           }
-        case SET_JSON:
-        return{
-          ...state,
-          json: action.json
-        }
     default:
       return state;
 }

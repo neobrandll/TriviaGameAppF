@@ -3,7 +3,7 @@ import {StyleSheet} from "react-native"
 
  export default StyleSheet.create({
    
-    pickerStyle:{height: 50, width: "40%", backgroundColor:"white"},
+    pickerStyle:{flex:1, backgroundColor:"white"},
     drawerItem: {
         flexDirection: "row",
     width:"100%",
@@ -17,8 +17,15 @@ import {StyleSheet} from "react-native"
     },
     categoryText:{
         paddingLeft:28,
-        marginRight:100
+        marginRight:105
 
+    },
+    pickerContainer:{
+        height: 50, 
+        width: "40%",
+        borderRadius: 10, 
+        borderWidth: 1,
+        overflow: 'hidden'
     }
 
 })

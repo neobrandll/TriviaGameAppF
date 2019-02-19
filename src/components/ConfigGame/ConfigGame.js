@@ -19,26 +19,27 @@ class configGame extends Component{
                             </View>
                             <View style={styles.drawerItem}>
                     
+                            <View style={[styles.pickerContainer, {marginRight:20}]}>
+                                <Picker
+                                        selectedValue={this.props.category}
+                                        style={[styles.pickerStyle, ]}
+                                        onValueChange={(itemValue) =>
+                                            this.props.onCatChange(itemValue)
+                                        }>
+                                        <Picker.Item label="Any Category" value="any" />
+                                        <Picker.Item label="General Knowledge" value="9" />
+                                        <Picker.Item label="Sports" value="21" />
+                                        <Picker.Item label="Animals" value="27" />
+                                        <Picker.Item label="Films" value="11" />
+                                        <Picker.Item label="Music" value="12" />
+                                        <Picker.Item label="Geography " value="22" />
+                                </Picker>
                             
-                            <Picker
-                                    selectedValue={this.props.category}
-                                    style={[styles.pickerStyle, {marginRight:20}]}
-                                    onValueChange={(itemValue) =>
-                                        this.props.onCatChange(itemValue)
-                                    }>
-                                    <Picker.Item label="Any Category" value="any" />
-                                    <Picker.Item label="General Knowledge" value="9" />
-                                    <Picker.Item label="Sports" value="21" />
-                                    <Picker.Item label="Animals" value="27" />
-                                    <Picker.Item label="Films" value="11" />
-                                    <Picker.Item label="Music" value="12" />
-                                    <Picker.Item label="Geography " value="22" />
-                            </Picker>
+                            </View>
+                            
                     
                     
-                    
-                                    
-                                    
+                            <View style={styles.pickerContainer}>
                                     <Picker
                                             selectedValue={this.props.difficulty}
                                             style={styles.pickerStyle}
@@ -49,6 +50,13 @@ class configGame extends Component{
                                             <Picker.Item label="Medium" value="medium" />
                                             <Picker.Item label="Hard" value="hard" />
                                     </Picker>
+                            
+                            </View>
+                                    
+                                    
+                                    
+
+                                    
                     
                  </View>
             </View>

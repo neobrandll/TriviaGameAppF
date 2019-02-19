@@ -1,26 +1,59 @@
 import React , {Component} from "react";
-import {StyleSheet, View,ImageBackground, Picker, Text} from "react-native"
+import {StyleSheet, View,ImageBackground, Picker, Text, Button} from "react-native"
 import HeadingText from "../../components/UI/HeadingText/HeadingText";
 import MainText from "../../components/UI/MainText/MainText";
 import backimg from "../../assets/bg.jpg";
 import ConfigGame from "../../components/ConfigGame/ConfigGame"
 import AnimatedBtn from "../../components/AnimatedBtn/AnimatedBtn"
-import { Provider } from "react-redux";
-import configureStore from "../../store/configureStore"
-const store = configureStore();
+import {Navigation} from "react-native-navigation";
+
+
 
 
 class Gameinit extends Component{
+
+    
     state={
         
     }
 
+    constructor(props) {
+        super(props);
+
+      }
+
+      componentDidMount() {
+        this.navigationEventListener = Navigation.events().bindComponent(this);
+      }
+    
+      componentWillUnmount() {
+        if (this.navigationEventListener) {
+          this.navigationEventListener.remove();
+        }
+      }
+    
+      navigationButtonPressed({ buttonId }) {
+        if (buttonId === "sideDrawerToggle"){
+            this.openSideMenu();
+        }
+      }
+    
+
+      openSideMenu = () => {
+        Navigation.mergeOptions(this.props.componentId, {
+          sideMenu: {
+            left: {
+              visible: true
+            }
+          }
+        });
+      }
    
 
     render(){
         return(
             <ImageBackground source={backimg } style={styles.backimg}>
-            <Provider store={store}>
+
                 <View style={styles.container}>
                     <View style={styles.headerContainer}>
                         <MainText>
@@ -32,18 +65,16 @@ class Gameinit extends Component{
                     </View>
                     
                     <ConfigGame/>
-                    <AnimatedBtn/>
+                    <AnimatedBtn />
                     
                 
                             
     
                     
 
-
                   
 
                 </View>
-                </Provider>
             </ImageBackground>
 
         )

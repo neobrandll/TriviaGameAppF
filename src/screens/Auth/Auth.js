@@ -142,6 +142,15 @@ class Auth extends Component {
   ]).then(sources =>{
     Navigation.setRoot({
       root: {
+        sideMenu:{
+            id: "sideMenu",
+        left: {
+          component: {
+            id: "Drawer",
+            name: "trivia-game.SideMenu"
+          }
+        },
+        center: {
         stack: {
           children: [{
             component: {
@@ -159,13 +168,13 @@ class Auth extends Component {
                         icon: sources[0],
                         id: "sideDrawerToggle"
                     }
-                   
-
                 ]
             }
           }
-        }
-      }
+        }//stack
+        }//center
+        }//sideMenu
+      }//root
     });
 
   })
@@ -330,6 +339,8 @@ const mapDispatchToProps = dispatch => {
     onLogin: authData => dispatch(tryAuth(authData))
   };
 };
+
+
 
 
 

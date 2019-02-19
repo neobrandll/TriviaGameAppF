@@ -15,10 +15,10 @@ export const setDifficulty = (difficulty) => {
     };
 };
 
-export const setJson = (json) =>{
+export const setJson = (questionsJson) =>{
     return {
         type: SET_JSON,
-        json: json
-    }
-}
+        questionsJson: questionsJson
+    };
+};
 
