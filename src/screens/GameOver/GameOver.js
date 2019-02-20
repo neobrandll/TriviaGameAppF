@@ -5,6 +5,7 @@ import {setRound, setTimer} from "../../store/actions/index"
 import CustomBtn from "../../components/UI/CustomBtn/CustomBtn"
 import backimg from "../../assets/bg.jpg";
 import {Navigation} from "react-native-navigation";
+import ScoreList from "../../components/ScoreList/ScoreList"
 
 
 class GameOver extends Component{
@@ -46,13 +47,21 @@ class GameOver extends Component{
                 <Text style={styles.headingStyles}>{this.props.round>9 ? "You beat the game!!" : "GameOver" }</Text>
                 <Text style={styles.modeStyles}>MODE: {this.props.difficulty }</Text>
                 <View style={styles.scoreboardContainer}>
-                {/* <FlatList></FlatList> */}
+
+                    <View style={[styles.userScoreContainer, {marginRight:50}]}>
+                        <Text style={styles.alltheScores}>All the scores </Text>
+                        <ScoreList/>
+                    </View>
+                    
                     <View style={styles.userScoreContainer}>
-                    <Text style={styles.userScore}>Your Score </Text>
+                        <Text style={styles.userScore}>Your score </Text>
                         <Text style={styles.userScore}>{`${this.props.userData.user.users_email}: ${this.props.round + 1} ` }</Text>
                     </View>
                 </View>
-                <CustomBtn color="#ea4152" >Go back!</CustomBtn>
+                <View style={styles.btnContainer}>
+                    <CustomBtn color="#ea4152" >Go back!</CustomBtn>
+                </View>
+                
             </View>
             </ImageBackground>
         )
@@ -76,6 +85,8 @@ const styles = StyleSheet.create({
         fontSize: 50
       },
       modeStyles:{
+          marginTop:10,
+          marginBottom:20,
         color:"#fff",
         fontWeight: "bold",
         fontSize: 30
@@ -86,6 +97,7 @@ const styles = StyleSheet.create({
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
+          borderRadius:3
       },
       scoreboardContainer:{
           flexDirection:"row",
@@ -99,6 +111,15 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         fontSize: 20,
         color:"rgb(92, 185, 230)"
+      },
+      alltheScores:{
+        paddingLeft:5,
+        fontWeight: "bold",
+        fontSize: 18,
+        color:"rgb(92, 185, 230)"
+      },
+      btnContainer:{
+          marginTop:20
       }
 
 })
