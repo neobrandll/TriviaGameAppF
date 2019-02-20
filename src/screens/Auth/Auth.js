@@ -33,7 +33,7 @@ class Auth extends Component {
     controls: {
       name:{
         value:"",
-        valid: true,
+        valid: false,
         validationRules:{
           notEmpty: true
         },
@@ -49,7 +49,7 @@ class Auth extends Component {
       // },
       password: {
         value: "",
-        valid: true,
+        valid: false,
         validationRules: {
           minLength: 6
         },

@@ -6,13 +6,14 @@ import configureStore from "./src/store/configureStore";
 import GameInitScreen from './src/screens/GameInit/Gameinit'
 import SideMenu from "./src/screens/SideMenu/SideMenu";
 import GameScreen from "./src/screens/GameScreen/GameScreen"
+import GameOver from "./src/screens/GameOver/GameOver";
 
 
 const store = configureStore();
 
 
 
-  
+  //registering screens
 
   Navigation.registerComponent("trivia-game.SideMenu", () => (props) => (
     <Provider store={store}>
@@ -40,6 +41,12 @@ const store = configureStore();
       <GameInitScreen {...props} />
     </Provider>
   ), () => GameInitScreen);
+
+  Navigation.registerComponent("trivia-game.GameOverScreen", () => (props) => (
+    <Provider store={store}>
+      <GameOver {...props} />
+    </Provider>
+  ), () => GameOver);
 
 
   

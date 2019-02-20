@@ -1,4 +1,4 @@
-import {SET_ROUND, SET_TIMER, LOG_OUT} from "./actionTypes";
+import {SET_ROUND, SET_TIMER, LOG_OUT, SET_SCORES} from "./actionTypes";
 
 
 export const setRound = (round) => {
@@ -19,5 +19,12 @@ export const logOut = (any) => {
     return {
         type: LOG_OUT,
         any: any
+    };
+};
+
+export const setScores = (scores) => {
+    return {
+        type: SET_SCORES,
+        scores: scores
     };
 };

@@ -4,7 +4,8 @@ import {
   SET_ROUND,
   SET_TIMER,
   TRY_AUTH,
-  LOG_OUT
+  LOG_OUT,
+  SET_SCORES
 } from "../actions/actionTypes";
 
 
@@ -13,7 +14,8 @@ const initialState = {
     difficulty: "easy",
     round:0,
     timer:10,
-    authData:{}
+    authData:{},
+    scores={}
   }
 
 
@@ -44,6 +46,11 @@ const reducer = (state = initialState, action) => {
           return{
             ...state,
             authData: action.authData
+          }
+          case SET_SCORES:
+          return{
+            ...state,
+            scores: action.scores
           }
           case LOG_OUT:
           return initialState

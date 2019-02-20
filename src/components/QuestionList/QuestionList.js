@@ -21,6 +21,59 @@ class QuestionList extends Component{
         super(props)
     }
 
+    goLoginScreen = ()=> {
+        Promise.all([
+          Icon.getImageSource("md-menu", 30),
+      ]).then(sources =>{
+        Navigation.setRoot({
+          root: {
+            sideMenu:{
+                id: "sideMenu",
+            left: {
+              component: {
+                id: "Drawer",
+                name: "trivia-game.SideMenu"
+              }
+            },
+            center: {
+            stack: {
+              children: [{
+                component: {
+                  name: "trivia-game.GameOverScreen",
+                }
+              }],
+              options: {
+                topBar: {
+                  title: {
+                    alignment: "center",
+                    text: 'Trivia Game'
+                  },
+                    leftButtons: [
+                        { 
+                            icon: sources[0],
+                            id: "sideDrawerToggle"
+                        }
+                    ]
+                }
+              }
+            }//stack
+            }//center
+            }//sideMenu
+          }//root
+        });
+      })
+      }
+
+      gameOverHandler = ()=>{
+          let token = this.props.userData.token
+      }
+
+
+
+
+
+
+
     correctAnswerHandler = ()=>{
         Alert.alert("correct", "la acertaste",
                         [{text: 'OK', onPress: () => {
@@ -184,7 +237,9 @@ const styles = StyleSheet.create({
 
         const mapStateToProps = state=> {
             return{
-                round: state.app.round
+                round: state.app.round,
+                userData: state.app.authData,
+                questions: state.questions.questionsJson
             }
         }
 
