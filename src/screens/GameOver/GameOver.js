@@ -4,23 +4,52 @@ import {connect} from "react-redux"
 import {setRound, setTimer} from "../../store/actions/index"
 import CustomBtn from "../../components/UI/CustomBtn/CustomBtn"
 import backimg from "../../assets/bg.jpg";
+import {Navigation} from "react-native-navigation";
 
 
 class GameOver extends Component{
     constructor(props){
         super(props)
     }
+     
+    //methods for the side menu
+    componentDidMount() {
+        this.navigationEventListener = Navigation.events().bindComponent(this);
+      }
+    
+      componentWillUnmount() {
+        if (this.navigationEventListener) {
+          this.navigationEventListener.remove();
+        }
+      }
+    
+      navigationButtonPressed({ buttonId }) {
+        if (buttonId === "sideDrawerToggle"){
+            this.openSideMenu();
+        }
+      }
+
+      openSideMenu = () => {
+        Navigation.mergeOptions(this.props.componentId, {
+          sideMenu: {
+            left: {
+              visible: true
+            }
+          }
+        });
+      }
     render(){
         return(
             <ImageBackground source={backimg
-            } style={{flex:1}}>
-            <View style={{flex:1}}>
-                <Text style={{color:"#fff"}}>{this.props.round>9 ? "You beat the game!!" : "GameOver" }</Text>
-                <Text style={{color:"#fff"}}>{this.props.questions.results.difficulty }</Text>
-                <View style={StyleSheet.scoreboardContainer}>
+            } style={styles.backimg}>
+            <View style={styles.container}>
+                <Text style={styles.headingStyles}>{this.props.round>9 ? "You beat the game!!" : "GameOver" }</Text>
+                <Text style={styles.modeStyles}>MODE: {this.props.difficulty }</Text>
+                <View style={styles.scoreboardContainer}>
                 {/* <FlatList></FlatList> */}
-                    <View style={StyleSheet.userScore}>
-                        <Text>{`${this.props.userData.user.users_email}: ${this.props.round} ` }</Text>
+                    <View style={styles.userScoreContainer}>
+                    <Text style={styles.userScore}>Your Score </Text>
+                        <Text style={styles.userScore}>{`${this.props.userData.user.users_email}: ${this.props.round + 1} ` }</Text>
                     </View>
                 </View>
                 <CustomBtn color="#ea4152" >Go back!</CustomBtn>
@@ -30,7 +59,49 @@ class GameOver extends Component{
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center"
+      },
+      backimg
+    : {
+        width: "100%",
+        flex: 1
+      },
+      headingStyles:{
+        color:"#fff",
+        fontWeight: "bold",
+        fontSize: 50
+      },
+      modeStyles:{
+        color:"#fff",
+        fontWeight: "bold",
+        fontSize: 30
+      },
+      userScoreContainer:{
+          backgroundColor:"#eee",
+          width:"35%",
+          height: "100%",
+          justifyContent: "center",
+          alignItems: "center",
+      },
+      scoreboardContainer:{
+          flexDirection:"row",
+          justifyContent: "center",
+          alignItems: "center",
+          width:"100%",
+          height:"30%"
 
+      },
+      userScore:{
+        fontWeight: "bold",
+        fontSize: 20,
+        color:"rgb(92, 185, 230)"
+      }
+
+})
 
 
 
@@ -43,7 +114,7 @@ const mapStateToProps = state=> {
         round: state.app.round,
         userData: state.app.authData,
         scores : state.app.scores,
-        questions: state.questions.questionsJson
+        difficulty: state.app.difficulty
     }
 }
 

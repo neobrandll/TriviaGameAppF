@@ -15,6 +15,7 @@ class GameScreen extends Component{
         i:0
     }
 
+    //methods for the sideMenu
     componentDidMount() {
         this.navigationEventListener = Navigation.events().bindComponent(this);
       }

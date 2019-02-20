@@ -66,9 +66,24 @@ class QuestionList extends Component{
       }
 
       gameOverHandler = ()=>{
+        
+          let gameKey;
+        let difficulty = this.props.difficulty
+           switch(difficulty){
+            case "easy": 
+             gameKey = 1
+             break;
+             case "medium":
+             gameKey = 2
+             break;
+             case "hard":
+             gameKey = 3
+             break;
+        }
+
           let token = this.props.userData.token
           const fetchData= {
-            gameType: this.props.questions.type,
+            gameType: gameKey,
             matchScore: this.props.round + 1
           }
           const myHeaders = new Headers();
@@ -97,7 +112,7 @@ class QuestionList extends Component{
                               "Content-type":"application/x-www-form-urlencoded",
                               "Authorization": "Bearer " + token
                             }}
-                            fetch(`http://localhost:3001/scoreboard/getScores?gametype=${this.props.questions.type}`, configScore).then(res => res.json())
+                            fetch(`http://localhost:3001/scoreboard/getScores?gametype=${gameKey}`, configScore).then(res => res.json())
                             .then(scores =>{
                                 this.props.setScoresGlobal(scores)
                                 this.goGameOverScreen()
@@ -293,7 +308,8 @@ const styles = StyleSheet.create({
             return{
                 round: state.app.round,
                 userData: state.app.authData,
-                questions: state.questions.questionsJson
+                questions: state.questions.questionsJson,
+                difficulty: state.app.difficulty
             }
         }
 
