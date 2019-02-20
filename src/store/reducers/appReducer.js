@@ -15,7 +15,7 @@ const initialState = {
     round:0,
     timer:10,
     authData:{},
-    scores={}
+    scores:{}
   }
 
 

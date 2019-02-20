@@ -10,9 +10,10 @@ import {
 } from "react-native";
 import QuestionBtn from "../QuestionBtn/QuestionBtn"
 import {connect} from "react-redux"
-import {setRound, setTimer} from "../../store/actions/index"
+import {setRound, setTimer, setScores} from "../../store/actions/index"
 import Timer  from "../../components/Timer/Timer"
 import Icon from "../../../node_modules/react-native-vector-icons/Ionicons"
+import {Navigation} from "react-native-navigation";
 
 
 
@@ -21,7 +22,7 @@ class QuestionList extends Component{
         super(props)
     }
 
-    goLoginScreen = ()=> {
+    goGameOverScreen = ()=> {
         Promise.all([
           Icon.getImageSource("md-menu", 30),
       ]).then(sources =>{
@@ -66,7 +67,54 @@ class QuestionList extends Component{
 
       gameOverHandler = ()=>{
           let token = this.props.userData.token
-      }
+          const fetchData= {
+            gameType: this.props.questions.type,
+            matchScore: this.props.round + 1
+          }
+          const myHeaders = new Headers();
+
+            myHeaders.append('Content-Type', 'application/json');
+            myHeaders.append('Authorization', "Bearer " + token);
+          
+
+          let config = {
+            method: "POST",
+            withCredentials:true,
+            credentials:'same-origin',
+            headers: myHeaders,
+            body:  JSON.stringify(fetchData)
+          }
+      
+                    fetch('http://localhost:3001/scoreboard/setScore', config).then(res => res.json())
+                    .then(answ => {
+                          
+                
+                          let configScore = {
+                            method: 'GET',
+                            withCredentials:true,
+                            credentials:'same-origin',
+                            headers:{
+                              "Content-type":"application/x-www-form-urlencoded",
+                              "Authorization": "Bearer " + token
+                            }}
+                            fetch(`http://localhost:3001/scoreboard/getScores?gametype=${this.props.questions.type}`, configScore).then(res => res.json())
+                            .then(scores =>{
+                                this.props.setScoresGlobal(scores)
+                                this.goGameOverScreen()
+                            })
+                            .catch(e=>{
+                                console.log(e)
+                                Alert.alert("error", "an error has ocurred in the second fetch")
+                            })
+
+                    
+      })
+      .catch(e=>{
+        console.log(e)
+        Alert.alert("error", "an error has ocurred in the first fetch")
+    })
+    
+    }
 
 
 
@@ -75,27 +123,32 @@ class QuestionList extends Component{
 
 
     correctAnswerHandler = ()=>{
-        Alert.alert("correct", "la acertaste",
+        Alert.alert("correct", "U got it right!",
                         [{text: 'OK', onPress: () => {
                             if(this.props.round<9){
                             this.props.nextRound(this.props.round+1)
                             this.props.setTime(10)
                         }else{
-                            Alert.alert("correct", "YOU BEAT THE GAME")
-                            Timer.clearI();
+                            this.gameOverHandler()
                         }
                         
                         
                         } }],
-                        {onDismiss: ()=>{
+                        {onDismiss: ()=>{ 
+                            if(this.props.round<9){
                             this.props.nextRound(this.props.round+1)
                             this.props.setTime(10)
+                        }else{
+                            this.gameOverHandler()
+                        }
+                        
+                        
                         
                         } })
     }
     
     incorrectAnswerHandler = ()=>{
-        Alert.alert("incorrect", "la pelaste")
+        this.gameOverHandler()
         
     }
 
@@ -231,7 +284,8 @@ const styles = StyleSheet.create({
         const mapDispatchToProps = dispatch =>{
             return {
                 nextRound: round => dispatch(setRound(round)),
-                setTime: timer => dispatch(setTimer(timer))
+                setTime: timer => dispatch(setTimer(timer)),
+                setScoresGlobal: scores => dispatch(setScores(scores))
               };
         }
 
