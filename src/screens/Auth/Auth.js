@@ -9,7 +9,8 @@ import {
   Dimensions,
   KeyboardAvoidingView,
   Keyboard,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
+  Alert
 } from "react-native";
 import { connect } from "react-redux";
 import CustomInput from "../../components/UI/CustomInput/CustomInput";
@@ -18,7 +19,7 @@ import MainText from "../../components/UI/MainText/MainText";
 import CustomBtn from "../../components/UI/CustomBtn/CustomBtn";
 import backimg from "../../assets/bg.jpg";
 import validate from "../../utility/validation";
-import { tryAuth } from "../../store/actions/index";
+import { tryAuth, logOut } from "../../store/actions/index";
 import {Navigation} from "react-native-navigation";
 import Icon from "../../../node_modules/react-native-vector-icons/Ionicons"
 
@@ -27,6 +28,7 @@ class Auth extends Component {
   state = {
     viewMode: Dimensions.get("window").height > 500 ? "portrait" : "landscape",
     authMode: "login",
+    
 
     controls: {
       name:{
@@ -64,6 +66,10 @@ class Auth extends Component {
     }
   };
 
+  componentDidMount(){
+    this.props.LoggingOut("hi")
+  }
+
   constructor(props) {
     super(props);
     Dimensions.addEventListener("change", this.updateStyles);
@@ -88,14 +94,51 @@ class Auth extends Component {
   };
 
   loginHandler = () => {
-    const authData = {
+    
+    // fetch('http://localhost:3001/session/logout', {
+    //   method: "GET"}).then(res => console.log("al menos esto funciona"))
+    // return 
+
+    const inputsData = {
       email: this.state.controls.name.value,
       password: this.state.controls.password.value
     };
-    //this.props.onLogin(authData);
-    
-    Auth.susLog();
+    let config = {
+      method: "POST",
+      withCredentials:true,
+      credentials:'same-origin',
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:  JSON.stringify(inputsData)
+    }
 
+      if(this.state.authMode === "signup"){
+              fetch('http://localhost:3001/register/createUser', config).then(res => res.json())
+              .then(data =>{
+                     if(data.status === 200){
+                      Alert.alert("Register complete!")
+                  }
+                  else{
+                    Alert.alert("error", "An error has ocurred, verify your data")
+                  }
+                })
+                
+                .catch(e =>{
+                  Alert.alert("error", "An error has ocurred, verify your data")
+                  console.log(e)
+                })
+            }
+            else{
+              fetch('http://localhost:3001/session/login', config).then(res => res.json())
+              .then(data =>{
+                if(data.status === 200){
+                 this.props.onLogin(data)
+                 Auth.susLog()
+              }
+              })
+            }
+    
   };
 
   updateInputState = (key, value) => {
@@ -347,7 +390,8 @@ const styles = StyleSheet.create({
 
 const mapDispatchToProps = dispatch => {
   return {
-    onLogin: authData => dispatch(tryAuth(authData))
+    onLogin: authData => dispatch(tryAuth(authData)),
+    LoggingOut: any => dispatch(logOut(any))
   };
 };
 

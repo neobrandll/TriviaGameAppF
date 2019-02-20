@@ -10,11 +10,12 @@ import {
 } from "react-native";
 import QuestionBtn from "../QuestionBtn/QuestionBtn"
 import {connect} from "react-redux"
-import {setRound} from "../../store/actions/index"
+import {setRound, setTimer} from "../../store/actions/index"
+import Timer  from "../../components/Timer/Timer"
 
 
 
-class questionList extends Component{
+class QuestionList extends Component{
     constructor(props){
         super(props)
     }
@@ -62,6 +63,9 @@ class questionList extends Component{
                 {secondView}
             
                 </View>
+                <View>
+                    <Timer onTimeE={this.incorrectAnswerHandler}/>
+                </View>
             </View>
         )
     }
@@ -108,7 +112,8 @@ const styles = StyleSheet.create({
 
         const mapDispatchToProps = dispatch =>{
             return {
-                nextRound: round => dispatch(setRound(round))
+                nextRound: round => dispatch(setRound(round)),
+                setTimer: timer => dispatch(setTimer(timer))
               };
         }
 
@@ -118,4 +123,4 @@ const styles = StyleSheet.create({
             }
         }
 
-    export default connect(mapStateToProps, mapDispatchToProps)(questionList)
+    export default connect(mapStateToProps, mapDispatchToProps)(QuestionList)

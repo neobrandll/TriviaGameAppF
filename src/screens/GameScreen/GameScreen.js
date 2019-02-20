@@ -7,6 +7,7 @@ import {} from "../../store/actions/index"
 import Gameinit from "../GameInit/Gameinit"
 import backimg from "../../assets/bg.jpg";
 
+
 import QuestionList from "../../components/QuestionList/QuestionList"
 
 class GameScreen extends Component{
@@ -67,7 +68,7 @@ class GameScreen extends Component{
                         </View>
                          
                          <QuestionList  questionInfo={this.props.questions.results[this.props.round]} array={questionArr}></QuestionList>
-                    
+                        
             
                 </View>
         </ImageBackground>
