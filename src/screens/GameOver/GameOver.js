@@ -6,11 +6,19 @@ import CustomBtn from "../../components/UI/CustomBtn/CustomBtn"
 import backimg from "../../assets/bg.jpg";
 import {Navigation} from "react-native-navigation";
 import ScoreList from "../../components/ScoreList/ScoreList"
+import {newGame} from "../../store/actions/index"
+import Auth from "../Auth/Auth"
 
 
 class GameOver extends Component{
     constructor(props){
         super(props)
+    }
+
+    //try again method
+    gobackHandler= () =>{
+        this.props.tryAgain();
+        Auth.susLog()
     }
      
     //methods for the side menu
@@ -59,7 +67,7 @@ class GameOver extends Component{
                     </View>
                 </View>
                 <View style={styles.btnContainer}>
-                    <CustomBtn color="#ea4152" >Go back!</CustomBtn>
+                    <CustomBtn color="#ea4152" onPress={this.gobackHandler} >Go back!</CustomBtn>
                 </View>
                 
             </View>
@@ -126,7 +134,11 @@ const styles = StyleSheet.create({
 
 
 
-
+const mapDispatchToProps = dispatch =>{
+    return {
+        tryAgain: ()=> dispatch(newGame())
+      };
+}
 
 
 
@@ -139,4 +151,4 @@ const mapStateToProps = state=> {
     }
 }
 
-export default connect(mapStateToProps, null )(GameOver)
+export default connect(mapStateToProps, mapDispatchToProps )(GameOver)

@@ -5,7 +5,8 @@ import {
   SET_TIMER,
   TRY_AUTH,
   LOG_OUT,
-  SET_SCORES
+  SET_SCORES,
+  NEW_GAME
 } from "../actions/actionTypes";
 
 
@@ -54,6 +55,15 @@ const reducer = (state = initialState, action) => {
           }
           case LOG_OUT:
           return initialState
+
+          case NEW_GAME:
+          return{
+            ...state,
+            category: "any",
+            difficulty: "easy",
+            round:0,
+            timer:10,
+          }
             
           
     default:

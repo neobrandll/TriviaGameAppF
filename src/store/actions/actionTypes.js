@@ -6,3 +6,4 @@ export const SET_ROUND = 'SET_ROUND';
 export const SET_TIMER = 'SET_TIMER';
 export const LOG_OUT = 'LOG_OUT';
 export const SET_SCORES = 'SET_SCORES';
+export const NEW_GAME = 'NEW_GAME';
