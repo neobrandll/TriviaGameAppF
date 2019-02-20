@@ -14,32 +14,34 @@ class TimerComponent extends Component {
     }
     timeHolder;
   oneSec= ()=>{
-    console.log(this.props.timer)
-      if(this.props.timer <=1){
-          //this.props.onTimeE();
-      }
-      else{
-        this.timeHolder= this.props.timer - 1
-        this.props.setTime(this.timeHolder)
-      }
-    
-      
-    
-  }
+               console.log(this.props.timer)
+               if(this.props.timer == 0){
+                    this.props.onTimeE();
+                    clearInterval(this._interval);
+                       } 
+        else{
+            this.timeHolder= this.props.timer - 1
+            this.props.setTime(this.timeHolder)
+            }
+     }
     componentDidMount() {
-        //this._interval = setInterval(()=>{this.oneSec()}, 1000);
+        this._interval = setInterval(()=>{this.oneSec()}, 1000);
       }
       
       componentWillUnmount() {
-       // clearInterval(this._interval);
+        clearInterval(this._interval);
+      }
+
+      static clearI = ()=>{
+        clearInterval(this._interval);
       }
 
     
     render() {
         return (
-            <View  style={styles.container}>
-                <Text>{this.props.timer}</Text>
-            </View>
+            
+                <Text style={styles.textStyles}>{this.props.timer}</Text>
+            
             
         )
     }
@@ -59,9 +61,10 @@ const mapStateToProps = state=> {
 }
 
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-        backgroundColor:"blue"
+    textStyles:{
+        fontWeight:"bold", 
+        fontSize:35,
+        paddingLeft:20
     }
 })
 

@@ -135,7 +135,13 @@ class Auth extends Component {
                 if(data.status === 200){
                  this.props.onLogin(data)
                  Auth.susLog()
+              }else{
+                Alert.alert("error", "An error has ocurred, verify your data")
               }
+              })
+              .catch(e =>{
+                Alert.alert("error", "An error has ocurred, verify your data")
+                console.log(e)
               })
             }
     

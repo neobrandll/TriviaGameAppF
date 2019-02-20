@@ -12,6 +12,7 @@ import QuestionBtn from "../QuestionBtn/QuestionBtn"
 import {connect} from "react-redux"
 import {setRound, setTimer} from "../../store/actions/index"
 import Timer  from "../../components/Timer/Timer"
+import Icon from "../../../node_modules/react-native-vector-icons/Ionicons"
 
 
 
@@ -22,16 +23,36 @@ class QuestionList extends Component{
 
     correctAnswerHandler = ()=>{
         Alert.alert("correct", "la acertaste",
-                        [{text: 'OK', onPress: () => {this.props.nextRound(this.props.round+1)} }],
-                        {onDismiss: ()=>{this.props.nextRound(this.props.round+1)} })
+                        [{text: 'OK', onPress: () => {
+                            if(this.props.round<9){
+                            this.props.nextRound(this.props.round+1)
+                            this.props.setTime(10)
+                        }else{
+                            Alert.alert("correct", "YOU BEAT THE GAME")
+                            Timer.clearI();
+                        }
+                        
+                        
+                        } }],
+                        {onDismiss: ()=>{
+                            this.props.nextRound(this.props.round+1)
+                            this.props.setTime(10)
+                        
+                        } })
     }
     
     incorrectAnswerHandler = ()=>{
-        Alert.alert("incorrect", "la pelaste",
-                        [{text: 'OK', onPress: () => {this.props.nextRound(this.props.round+1)} }],
-                        {onDismiss: ()=>{this.props.nextRound(this.props.round+1)} })
+        Alert.alert("incorrect", "la pelaste")
         
     }
+
+    replaceSpecial = (string)=>{
+        let text = string
+        text = text.replace(/&quot;/g, '"');
+        text = text.replace(/&#039;/g, "'");
+        text = text.replace(/&rsquo;/g, "'");
+        return text
+       }
 
     render(){
 
@@ -45,12 +66,12 @@ class QuestionList extends Component{
             return (<QuestionBtn 
             onPress={question === info.correct_answer ? this.correctAnswerHandler : this.incorrectAnswerHandler} 
             key={question} 
-            color={"#ea4152"}> {question} </QuestionBtn>)}
+            color={"#ea4152"}> {this.replaceSpecial(question)} </QuestionBtn>)}
             );
         const secondView = arr2.map(question =>  { 
             return (<QuestionBtn 
             onPress={question === info.correct_answer ? this.correctAnswerHandler : this.incorrectAnswerHandler}
-             key={question} color={"#ea4152"}> {question} </QuestionBtn>)}
+             key={question} color={"#ea4152"}> {this.replaceSpecial(question)} </QuestionBtn>)}
              );
             
         content = (
@@ -63,9 +84,16 @@ class QuestionList extends Component{
                 {secondView}
             
                 </View>
-                <View>
-                    <Timer onTimeE={this.incorrectAnswerHandler}/>
-                </View>
+                <View style={styles.timerNroundtContainer}>
+                    <View style={styles.timerStyles}>
+                    <Icon name= "ios-time" size={50} color="rgb(153, 51, 255)"/>
+                        <Timer onTimeE={this.incorrectAnswerHandler}/>
+                    </View>
+                    <View style={[styles.timerStyles, {marginLeft:25}]}>
+                        <Text style={styles.roundStyles}>Round:{(this.props.round+1)} </Text>
+                    </View>
+                            
+                    </View>
             </View>
         )
     }
@@ -77,14 +105,30 @@ class QuestionList extends Component{
                  color={"#ea4152"}> {question} </QuestionBtn>)}
         );
         content = (
-            <View style={styles.container}>
-                {uniqueView}
+            <View style={{width:"100%"}}>
+                    <View style={styles.questionContainer}>
+                        {uniqueView}
+                        
+                    </View>
+
+                    <View style={styles.timerNroundtContainer}>
+                    <View style={styles.timerStyles}>
+                    <Icon name= "ios-time" size={50} color="rgb(153, 51, 255)"/>
+                        <Timer onTimeE={this.incorrectAnswerHandler}/>
+                    </View>
+                    <View style={[styles.timerStyles, {marginLeft:25}]}>
+                        <Text style={styles.roundStyles}>Round:{(this.props.round+1)} </Text>
+                    </View>
+                            
+                    </View>
             </View>
+            
         )
     }
         return (
             <View style={styles.container}>
                 {content}
+                
             </View>
         )
     }
@@ -106,14 +150,35 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center"
-    }
+    },
+        timerNroundtContainer:{
+        paddingTop:35,
+        width:"100%", 
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center"
+        },
+        timerStyles:{
+            flexDirection: "row",
+            backgroundColor:"rgba(204, 153, 255, 0.95)",
+            width:"40%", 
+            borderRadius:30, 
+            height:80,
+            justifyContent: "center",
+            alignItems: "center"
+        },
+        roundStyles:{
+                fontWeight:"bold", 
+                fontSize:25,
+            
+        },
         })
 
 
         const mapDispatchToProps = dispatch =>{
             return {
                 nextRound: round => dispatch(setRound(round)),
-                setTimer: timer => dispatch(setTimer(timer))
+                setTime: timer => dispatch(setTimer(timer))
               };
         }
 
