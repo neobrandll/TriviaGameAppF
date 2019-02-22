@@ -1,6 +1,6 @@
 # TriviaGameApp
 
-An app made with react-native for the Mobile Device Development subject.
+A mobile app made with react-native for the Mobile Device Development subject.
 
 # Installing
 
