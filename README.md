@@ -10,3 +10,9 @@ use "yarn install" command.
 
 "use yarn run android" command.
 
+# Authors
+
+<ul>
+<li><strong>Brandon Lugo</strong> - <a href="https://github.com/neobrandll">GitHub</a></li>
+</ul>
+
